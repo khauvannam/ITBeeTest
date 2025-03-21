@@ -1,0 +1,64 @@
+# .NET build artifacts
+bin/
+obj/
+out/
+Debug/
+Release/
+app.publish/
+publish/
+
+# User-specific files
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs and database files
+*.log
+logs/
+*.ldf
+*.mdf
+*.sqlite
+*.db
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# Visual Studio specific
+.vs/
+*.ncrunchproject
+*.ncrunchsolution
+*.vsp
+*.vspx
+*.testsettings
+*.vsconfig
+
+# Resharper
+*_Resharper*/
+*.DotSettings.user
+
+# Azure and AWS settings
+*.azurefunctions/
+local.settings.json
+appsettings.Development.json
+appsettings.Local.json
+
+# NuGet Packages
+*.nupkg
+packages/
+.nuget/
+project.lock.json
+project.assets.json
+
+# Docker files
+docker-compose.override.yml
+
+# Secrets and Configurations
+secrets.json
+.env
+
+# Generated files
+Generated/
+ServiceFabricBackup/
