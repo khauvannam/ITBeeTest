@@ -1,16 +1,12 @@
 using Application.Features.Orders.Commands;
-using Presentation.Controllers;
-
-namespace UnitTest;
-
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using FluentAssertions;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
-using Xunit;
+using Presentation.Controllers;
+
+namespace UnitTest;
 
 public class OrdersControllerTests
 {

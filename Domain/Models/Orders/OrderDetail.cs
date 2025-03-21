@@ -1,19 +1,25 @@
-using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
 namespace Domain.Models.Orders;
 
 public class OrderDetail
 {
-    [JsonConstructor]
-    public OrderDetail() { }
+    [Newtonsoft.Json.JsonConstructor]
+    private OrderDetail() { }
 
+    [JsonInclude]
     public int Id { get; init; }
+
+    [JsonInclude]
     public string ProductName { get; private set; } = null!;
+
+    [JsonInclude]
     public int Quantity { get; private set; }
+
+    [JsonInclude]
     public decimal Price { get; private set; }
 
-    [JsonIgnore]
+    [Newtonsoft.Json.JsonIgnore]
     public Order Order { get; init; } = null!;
 
     public int OrderId { get; private set; }

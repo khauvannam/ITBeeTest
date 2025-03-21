@@ -19,7 +19,19 @@ public static class Extension
     public static void AddPersistence(this IServiceCollection services)
     {
         var assembly = typeof(Extension).Assembly;
-        services.AddControllers();
+        services
+            .AddControllers()
+            .AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft
+                    .Json
+                    .ReferenceLoopHandling
+                    .Ignore;
+                options.SerializerSettings.NullValueHandling = Newtonsoft
+                    .Json
+                    .NullValueHandling
+                    .Ignore;
+            });
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(assembly));
         services.AddAutoMapper(typeof(OrderResolver), typeof(OrderDetailResolver));
         services.AddEndpointsApiExplorer();

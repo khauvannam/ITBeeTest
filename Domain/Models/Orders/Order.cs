@@ -4,15 +4,24 @@ namespace Domain.Models.Orders;
 
 public class Order
 {
-    [JsonConstructor]
-    public Order() { }
+    [Newtonsoft.Json.JsonConstructor]
+    private Order() { }
 
+    [JsonInclude]
     public int Id { get; init; }
+
+    [JsonInclude]
     public string CustomerName { get; private set; } = null!;
+
+    [JsonInclude]
     public decimal TotalAmount { get; private set; }
     public DateTime CreateAt { get; } = DateTime.Now;
     public DateTime UpdateAt { get; private set; } = DateTime.Now;
+
+    [JsonInclude]
     public OrderStatus Status { get; set; } = OrderStatus.Pending;
+
+    [JsonInclude]
     public List<OrderDetail> OrderDetails { get; init; } = null!;
 
     public static Order Create(string customerName, List<OrderDetail> orderDetails)
